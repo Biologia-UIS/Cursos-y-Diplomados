@@ -28,19 +28,19 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            padding: 20px 0; /* Aumentado padding vertical */
-            margin-bottom: 25px; /* Aumentado margen inferior */
+            padding: 15px 0;
+            margin-bottom: 20px;
             border-bottom: 1px solid #eee;
         }
 
         .logos-header img {
-            height: 80px; /* <<< LOGOS MÁS GRANDES (DESKTOP) >>> */
+            height: 50px;
             width: auto;
             margin: 0 10px;
         }
 
         /* --- Tipografía --- */
-        h2, h3 { /* (Sin cambios aquí, pero el margen superior se ajustó antes) */
+        h2, h3 {
             color: #0056b3;
             border-bottom: 2px solid #e0e0e0;
             padding-bottom: 8px;
@@ -52,23 +52,44 @@
         p { margin-bottom: 15px; }
         strong { color: #555; }
 
-        /* --- Filtros (sin cambios) --- */
-        .filter-section { /* ... */ }
-        .filter-section strong { /* ... */ }
-        .filter-section a { /* ... */ }
-        .filter-section a:hover { /* ... */ }
+        /* --- Filtros --- */
+        .filter-section {
+            background-color: #eef2f5;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 6px;
+            border: 1px solid #d6dde3;
+        }
+        .filter-section strong { margin-right: 10px; font-weight: 600; }
+        .filter-section a {
+            display: inline-block; background-color: #ffffff; color: #0056b3; padding: 6px 12px;
+            margin: 4px; border-radius: 15px; text-decoration: none; font-size: 0.9em;
+            border: 1px solid #cdd5dc; transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .filter-section a:hover { background-color: #0056b3; color: #ffffff; border-color: #004085; }
 
-        /* --- Enlaces Generales (sin cambios) --- */
-        .return-link a { /* ... */ }
-        .return-link a:hover { /* ... */ }
+        /* --- Enlaces Generales --- */
+        .return-link a { color: #0056b3; text-decoration: none; font-weight: 500; }
+        .return-link a:hover { text-decoration: underline; }
 
-        /* --- Tablas (Estilos Base Desktop - sin cambios) --- */
-        table { /* ... */ }
-        th, td { /* ... */ }
-        thead th { /* ... */ }
-        tbody tr { /* ... */ }
-        tbody tr:nth-child(even) { /* ... */ }
-        tbody tr:hover { /* ... */ }
+        /* --- Tablas (Estilos Base Desktop) --- */
+        table {
+            width: 100%; border-collapse: collapse; margin-bottom: 30px; margin-top: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        th, td {
+            padding: 12px 15px; text-align: left; vertical-align: middle;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        thead th {
+            background-color: #0056b3; color: #ffffff; font-weight: 600; text-transform: uppercase;
+            font-size: 0.85em; letter-spacing: 0.5px; border-bottom: 2px solid #004085;
+        }
+        tbody tr { background-color: #ffffff; transition: background-color 0.15s ease-in-out; }
+        tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        tbody tr:hover { background-color: #e9ecef; }
+        /* Estilo específico para el estado (4ª columna en Próximos) */
+        /* Usamos una clase para mayor seguridad en vez de nth-child */
         td.status-cell { font-style: italic; color: #28a745; }
 
 
@@ -77,50 +98,91 @@
         /* ========================================================== */
         @media (max-width: 600px) {
             .container {
-                margin: 15px;
-                padding: 15px;
-                width: auto;
-                box-shadow: none;
-                border-radius: 0;
+                margin: 15px; /* Margen más pequeño */
+                padding: 15px; /* Padding interno reducido */
+                width: auto; /* Ocupa el ancho disponible menos los márgenes */
+                box-shadow: none; /* Quitar sombra si se prefiere */
+                border-radius: 0; /* Quitar bordes redondeados si se prefiere */
             }
 
             .logos-header {
-                padding: 15px 0; /* Padding ajustado para móvil */
-                margin-bottom: 20px; /* Margen ajustado para móvil */
+                padding: 10px 0;
+                margin-bottom: 15px;
             }
 
             .logos-header img {
-                height: 60px; /* <<< LOGOS MÁS GRANDES (MÓVIL) >>> */
-                margin: 0 5px;
+                height: 40px; /* Logos más pequeños */
+                margin: 0 5px; /* Margen reducido */
             }
 
-            h2 { font-size: 1.6em; }
+            h2 { font-size: 1.6em; } /* Títulos más pequeños */
             h3 { font-size: 1.3em; }
 
             .filter-section a {
-                padding: 5px 10px;
+                padding: 5px 10px; /* Botones de filtro ligeramente más pequeños */
                 font-size: 0.85em;
             }
 
-            /* --- Transformación de Tablas a Tarjetas (sin cambios en esta parte) --- */
-            table, thead, tbody, th, td, tr { display: block; }
-            thead tr { position: absolute; top: -9999px; left: -9999px; }
-            tr { border: 1px solid #ccc; margin-bottom: 15px; border-radius: 4px; background-color: #fff; }
-            tbody tr:nth-child(even) { background-color: #fff; }
+            /* --- Transformación de Tablas a Tarjetas --- */
+            table, thead, tbody, th, td, tr {
+                display: block; /* Cambiar todo a block-level */
+            }
+
+            thead tr {
+                position: absolute; /* Ocultar cabecera original */
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc; /* Borde alrededor de cada "tarjeta" (fila) */
+                margin-bottom: 15px; /* Espacio entre tarjetas */
+                border-radius: 4px; /* Esquinas redondeadas para las tarjetas */
+                background-color: #fff; /* Fondo blanco por defecto para la tarjeta */
+            }
+             tbody tr:nth-child(even) {
+                 background-color: #fff; /* Quitar efecto cebra en modo tarjeta si se prefiere */
+            }
+
+
             td {
-                border: none; border-bottom: 1px solid #eee; position: relative; padding-left: 50%;
-                padding-top: 8px; padding-bottom: 8px; min-height: 24px; text-align: left;
+                border: none; /* Quitar bordes internos de celdas */
+                border-bottom: 1px solid #eee; /* Línea separadora DENTRO de la tarjeta */
+                position: relative;
+                padding-left: 50%; /* Espacio a la izquierda para la etiqueta */
+                padding-top: 8px;
+                padding-bottom: 8px;
+                min-height: 24px; /* Altura mínima para asegurar espacio */
+                text-align: left; /* Asegurar alineación izquierda */
             }
+
             td:before {
-                content: attr(data-label); position: absolute; top: 8px; left: 10px; width: 45%;
-                padding-right: 10px; white-space: nowrap; font-weight: bold; text-align: left; color: #333;
+                /* Contenido viene del atributo data-label */
+                content: attr(data-label);
+                /* Posicionamiento de la etiqueta */
+                position: absolute;
+                top: 8px; /* Alinear con padding-top de td */
+                left: 10px; /* Espacio desde el borde izquierdo */
+                width: 45%; /* Ancho de la etiqueta */
+                padding-right: 10px;
+                white-space: nowrap; /* Evitar que la etiqueta se rompa */
+                font-weight: bold; /* Hacer la etiqueta negrita */
+                text-align: left; /* Asegurar alineación izquierda de la etiqueta */
+                color: #333; /* Color de la etiqueta */
             }
-            td:last-child { border-bottom: 0; }
-            td.status-cell { /* Estilos se mantienen */ }
+
+             /* Última celda de la tarjeta sin borde inferior */
+             td:last-child {
+                 border-bottom: 0;
+             }
+
+              /* Ajuste específico para la celda de estado si es necesario */
+             td.status-cell {
+                 /* Estilos ya aplicados, se mantienen */
+                 /* Puedes añadir más si es necesario para móvil */
+             }
         }
         /* --- Fin de Estilos Responsive --- */
-
-        /* ... (Cierre de la etiqueta </style> y resto del HTML) ... */
 
     </style>
 </head>
@@ -166,8 +228,7 @@
                     <td data-label="Fecha(s)">14 Abr - 18 Abr, 2025</td>
                     <td data-label="Título del evento">Introducción a R para Bioinformática</td>
                     <td data-label="Organizador">iBGA</td>
-                    <td data-label="Estado" class="status-cell">Registro abierto</td>
-                    <td data-label="Cierre de registro">18 Abr</td>
+                    <td data-label="Estado" class="status-cell">Registro abierto</td> <td data-label="Cierre de registro">18 Abr</td>
                 </tr>
                 <tr>
                     <td data-label="Fecha(s)">12 May - 16 May, 2025</td>
