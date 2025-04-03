@@ -7,146 +7,194 @@
     <style>
         /* --- Estilos Generales --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            margin: 0; /* Quitar margen por defecto */
-            background-color: #f4f7f6; /* Fondo gris muy claro */
-            color: #333; /* Color de texto principal */
+            margin: 0;
+            background-color: #f4f7f6;
+            color: #333;
         }
 
-        /* Contenedor principal para centrar y limitar ancho */
         .container {
-            max-width: 960px; /* Ancho máximo del contenido */
-            margin: 30px auto; /* Centrar en la página con margen arriba/abajo */
+            max-width: 960px;
+            margin: 30px auto;
             padding: 25px;
-            background-color: #ffffff; /* Fondo blanco para el contenido */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave */
-            border-radius: 8px; /* Esquinas redondeadas */
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Cabecera de Logos --- */
+        .logos-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logos-header img {
+            height: 50px;
+            width: auto;
+            margin: 0 10px;
         }
 
         /* --- Tipografía --- */
         h2, h3 {
-            color: #0056b3; /* Un azul estándar o podría ser un color UIS */
-            border-bottom: 2px solid #e0e0e0; /* Línea separadora más sutil */
+            color: #0056b3;
+            border-bottom: 2px solid #e0e0e0;
             padding-bottom: 8px;
-            margin-top: 40px; /* Más espacio antes de los títulos */
-            margin-bottom: 20px; /* Espacio después de los títulos */
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
-
-        h2 {
-            font-size: 2em; /* Tamaño más grande para el título principal */
-        }
-
-        h3 {
-            font-size: 1.5em;
-        }
-
-        p {
-            margin-bottom: 15px;
-        }
-
-        strong {
-            color: #555;
-        }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+        p { margin-bottom: 15px; }
+        strong { color: #555; }
 
         /* --- Filtros --- */
         .filter-section {
-            background-color: #eef2f5; /* Fondo ligeramente azulado/grisáceo */
+            background-color: #eef2f5;
             padding: 15px;
             margin-bottom: 25px;
             border-radius: 6px;
             border: 1px solid #d6dde3;
         }
-
-        .filter-section strong {
-            margin-right: 10px;
-            font-weight: 600; /* Ligeramente más grueso */
-        }
-
+        .filter-section strong { margin-right: 10px; font-weight: 600; }
         .filter-section a {
-            display: inline-block; /* Permite padding y margin */
-            background-color: #ffffff;
-            color: #0056b3;
-            padding: 6px 12px;
-            margin: 4px;
-            border-radius: 15px; /* Más redondeado tipo "píldora" */
-            text-decoration: none;
-            font-size: 0.9em;
-            border: 1px solid #cdd5dc;
-            transition: background-color 0.2s ease, color 0.2s ease; /* Transición suave */
+            display: inline-block; background-color: #ffffff; color: #0056b3; padding: 6px 12px;
+            margin: 4px; border-radius: 15px; text-decoration: none; font-size: 0.9em;
+            border: 1px solid #cdd5dc; transition: background-color 0.2s ease, color 0.2s ease;
         }
+        .filter-section a:hover { background-color: #0056b3; color: #ffffff; border-color: #004085; }
 
-        .filter-section a:hover {
-            background-color: #0056b3;
-            color: #ffffff;
-            border-color: #004085;
-        }
+        /* --- Enlaces Generales --- */
+        .return-link a { color: #0056b3; text-decoration: none; font-weight: 500; }
+        .return-link a:hover { text-decoration: underline; }
 
-        /* --- Enlaces Generales (como el de retorno) --- */
-        .return-link a {
-            color: #0056b3;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .return-link a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Tablas --- */
+        /* --- Tablas (Estilos Base Desktop) --- */
         table {
-            width: 100%;
-            border-collapse: collapse; /* Bordes juntos */
-            margin-bottom: 30px;
-            margin-top: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Sombra muy sutil en la tabla */
+            width: 100%; border-collapse: collapse; margin-bottom: 30px; margin-top: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
-
         th, td {
-            padding: 12px 15px; /* Más padding para aire */
-            text-align: left;
-            vertical-align: middle; /* Alinear verticalmente al centro */
-            border-bottom: 1px solid #e0e0e0; /* Líneas horizontales sutiles */
+            padding: 12px 15px; text-align: left; vertical-align: middle;
+            border-bottom: 1px solid #e0e0e0;
         }
-
-        /* Cabecera de la tabla */
         thead th {
-            background-color: #0056b3; /* Fondo azul oscuro */
-            color: #ffffff; /* Texto blanco */
-            font-weight: 600; /* Texto en negrita */
-            text-transform: uppercase; /* Mayúsculas */
-            font-size: 0.85em;
-            letter-spacing: 0.5px; /* Espaciado entre letras */
-            border-bottom: 2px solid #004085; /* Borde inferior más grueso */
+            background-color: #0056b3; color: #ffffff; font-weight: 600; text-transform: uppercase;
+            font-size: 0.85em; letter-spacing: 0.5px; border-bottom: 2px solid #004085;
         }
+        tbody tr { background-color: #ffffff; transition: background-color 0.15s ease-in-out; }
+        tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        tbody tr:hover { background-color: #e9ecef; }
+        /* Estilo específico para el estado (4ª columna en Próximos) */
+        /* Usamos una clase para mayor seguridad en vez de nth-child */
+        td.status-cell { font-style: italic; color: #28a745; }
 
-        /* Cuerpo de la tabla */
-        tbody tr {
-            background-color: #ffffff;
-            transition: background-color 0.15s ease-in-out; /* Efecto suave al pasar el mouse */
-        }
 
-        /* Efecto "cebra" para filas pares */
-        tbody tr:nth-child(even) {
-            background-color: #f8f9fa; /* Gris muy claro alternado */
-        }
+        /* ========================================================== */
+        /* ---      ESTILOS RESPONSIVE PARA MÓVILES (< 600px)     --- */
+        /* ========================================================== */
+        @media (max-width: 600px) {
+            .container {
+                margin: 15px; /* Margen más pequeño */
+                padding: 15px; /* Padding interno reducido */
+                width: auto; /* Ocupa el ancho disponible menos los márgenes */
+                box-shadow: none; /* Quitar sombra si se prefiere */
+                border-radius: 0; /* Quitar bordes redondeados si se prefiere */
+            }
 
-        /* Efecto hover en las filas */
-        tbody tr:hover {
-            background-color: #e9ecef; /* Resaltar fila al pasar el mouse */
-        }
+            .logos-header {
+                padding: 10px 0;
+                margin-bottom: 15px;
+            }
 
-        /* Estilo específico para el estado */
-        td:nth-child(4) { /* Asumiendo que el estado es la 4ª columna en "Próximos" */
-             font-style: italic;
-             color: #28a745; /* Verde para "Registro abierto" */
+            .logos-header img {
+                height: 40px; /* Logos más pequeños */
+                margin: 0 5px; /* Margen reducido */
+            }
+
+            h2 { font-size: 1.6em; } /* Títulos más pequeños */
+            h3 { font-size: 1.3em; }
+
+            .filter-section a {
+                padding: 5px 10px; /* Botones de filtro ligeramente más pequeños */
+                font-size: 0.85em;
+            }
+
+            /* --- Transformación de Tablas a Tarjetas --- */
+            table, thead, tbody, th, td, tr {
+                display: block; /* Cambiar todo a block-level */
+            }
+
+            thead tr {
+                position: absolute; /* Ocultar cabecera original */
+                top: -9999px;
+                left: -9999px;
+            }
+
+            tr {
+                border: 1px solid #ccc; /* Borde alrededor de cada "tarjeta" (fila) */
+                margin-bottom: 15px; /* Espacio entre tarjetas */
+                border-radius: 4px; /* Esquinas redondeadas para las tarjetas */
+                background-color: #fff; /* Fondo blanco por defecto para la tarjeta */
+            }
+             tbody tr:nth-child(even) {
+                 background-color: #fff; /* Quitar efecto cebra en modo tarjeta si se prefiere */
+            }
+
+
+            td {
+                border: none; /* Quitar bordes internos de celdas */
+                border-bottom: 1px solid #eee; /* Línea separadora DENTRO de la tarjeta */
+                position: relative;
+                padding-left: 50%; /* Espacio a la izquierda para la etiqueta */
+                padding-top: 8px;
+                padding-bottom: 8px;
+                min-height: 24px; /* Altura mínima para asegurar espacio */
+                text-align: left; /* Asegurar alineación izquierda */
+            }
+
+            td:before {
+                /* Contenido viene del atributo data-label */
+                content: attr(data-label);
+                /* Posicionamiento de la etiqueta */
+                position: absolute;
+                top: 8px; /* Alinear con padding-top de td */
+                left: 10px; /* Espacio desde el borde izquierdo */
+                width: 45%; /* Ancho de la etiqueta */
+                padding-right: 10px;
+                white-space: nowrap; /* Evitar que la etiqueta se rompa */
+                font-weight: bold; /* Hacer la etiqueta negrita */
+                text-align: left; /* Asegurar alineación izquierda de la etiqueta */
+                color: #333; /* Color de la etiqueta */
+            }
+
+             /* Última celda de la tarjeta sin borde inferior */
+             td:last-child {
+                 border-bottom: 0;
+             }
+
+              /* Ajuste específico para la celda de estado si es necesario */
+             td.status-cell {
+                 /* Estilos ya aplicados, se mantienen */
+                 /* Puedes añadir más si es necesario para móvil */
+             }
         }
+        /* --- Fin de Estilos Responsive --- */
 
     </style>
 </head>
 <body>
 
     <div class="container">
+
+        <div class="logos-header">
+            <img src="images/logo-uis.png" alt="Logo Universidad Industrial de Santander">
+            <img src="images/logo-escuela-biologia.png" alt="Logo Escuela de Biología UIS">
+            <img src="images/logo-agrosavia.png" alt="Logo AGROSAVIA">
+        </div>
 
         <h2>Registro de Eventos</h2>
 
@@ -159,7 +207,8 @@
             <a href="#">GeBIO (Grupo de Estudios de la Biodiversidad)</a> |
             <a href="#">GIEFIVET (Grupo de Investigación en Ecofisiología Vegetal & Ecosistemas Terrestres)</a> |
             <a href="#">GIMG (Grupo de Investigación en Microbiología y Genética)</a> |
-            <a href="#">Alianza UIS - AGROSAVIA Parque Tecnológico Guatiguará</a> </div>
+            <a href="#">Alianza UIS - AGROSAVIA Parque Tecnológico Guatiguará</a>
+        </div>
 
         <p class="return-link"><a href="#">Volver a la lista de todos los eventos</a></p>
 
@@ -176,32 +225,31 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>14 Abr - 18 Abr, 2025</td>
-                    <td>Introducción a R para Bioinformática</td>
-                    <td>iBGA</td>
-                    <td>Registro abierto</td>
-                    <td>18 Abr</td>
+                    <td data-label="Fecha(s)">14 Abr - 18 Abr, 2025</td>
+                    <td data-label="Título del evento">Introducción a R para Bioinformática</td>
+                    <td data-label="Organizador">iBGA</td>
+                    <td data-label="Estado" class="status-cell">Registro abierto</td> <td data-label="Cierre de registro">18 Abr</td>
                 </tr>
                 <tr>
-                    <td>12 May - 16 May, 2025</td>
-                    <td>Introducción a Python para Bioinformática</td>
-                    <td>iBGA</td>
-                    <td>Registro abierto</td>
-                    <td>16 May</td>
+                    <td data-label="Fecha(s)">12 May - 16 May, 2025</td>
+                    <td data-label="Título del evento">Introducción a Python para Bioinformática</td>
+                    <td data-label="Organizador">iBGA</td>
+                    <td data-label="Estado" class="status-cell">Registro abierto</td>
+                    <td data-label="Cierre de registro">16 May</td>
                 </tr>
                 <tr>
-                    <td>2 Jun - 6 Jun, 2025</td>
-                    <td>Análisis de RNA-Seq</td>
-                    <td>iBGA</td>
-                    <td>Registro abierto</td>
-                    <td>2 Jun</td>
+                    <td data-label="Fecha(s)">2 Jun - 6 Jun, 2025</td>
+                    <td data-label="Título del evento">Análisis de RNA-Seq</td>
+                    <td data-label="Organizador">iBGA</td>
+                    <td data-label="Estado" class="status-cell">Registro abierto</td>
+                    <td data-label="Cierre de registro">2 Jun</td>
                 </tr>
                  <tr>
-                    <td>9 Jul - 11 Jul, 2025</td>
-                    <td>Análisis de RNA-Seq de Célula Única</td>
-                    <td>iBGA</td>
-                    <td>Registro abierto</td>
-                    <td>9 Jul</td>
+                    <td data-label="Fecha(s)">9 Jul - 11 Jul, 2025</td>
+                    <td data-label="Título del evento">Análisis de RNA-Seq de Célula Única</td>
+                    <td data-label="Organizador">iBGA</td>
+                    <td data-label="Estado" class="status-cell">Registro abierto</td>
+                    <td data-label="Cierre de registro">9 Jul</td>
                 </tr>
             </tbody>
         </table>
@@ -217,19 +265,19 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>24 Mar - 26 Mar, 2025</td>
-                    <td>Transcriptómica Espacial</td>
-                    <td>iBGA</td>
+                    <td data-label="Fecha(s)">24 Mar - 26 Mar, 2025</td>
+                    <td data-label="Título del evento">Transcriptómica Espacial</td>
+                    <td data-label="Organizador">iBGA</td>
                 </tr>
                 <tr>
-                    <td>10 Mar - 14 Mar, 2025</td>
-                    <td>Introducción a la Línea de Comandos para Bioinformática</td>
-                    <td>iBGA</td>
+                    <td data-label="Fecha(s)">10 Mar - 14 Mar, 2025</td>
+                    <td data-label="Título del evento">Introducción a la Línea de Comandos para Bioinformática</td>
+                    <td data-label="Organizador">iBGA</td>
                 </tr>
                 <tr>
-                    <td>9 Dic - 11 Dic, 2024</td>
-                    <td>Análisis de RNA-Seq de Célula Única</td>
-                    <td>iBGA</td>
+                    <td data-label="Fecha(s)">9 Dic - 11 Dic, 2024</td>
+                    <td data-label="Título del evento">Análisis de RNA-Seq de Célula Única</td>
+                    <td data-label="Organizador">iBGA</td>
                 </tr>
             </tbody>
         </table>
